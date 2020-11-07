@@ -1,0 +1,19 @@
+# sbt
+# (may want to keep parts of 'project')
+bin/
+target/
+build/
+project/target/
+project/config-classes/
+project/.bloop/
+
+# vs code
+.bloop/
+.metals/ 
+
+#general
+*.class
+*.cache
+*.log
+metals.sbt
+.DS_Store
