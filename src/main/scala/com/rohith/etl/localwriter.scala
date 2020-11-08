@@ -9,7 +9,7 @@ import java.io.PrintWriter
 object LocalWriter{
 
     def writeToLocal(csv: String): IO[Unit] = IO{
-        val writer = new PrintWriter(new File("/users/rmadamshetty/Documents/restAPIdata.csv"))
+        val writer = new PrintWriter(new File("/home/ubuntu/restAPIdata.csv"))
         writer.write(csv)
         writer.close()
     } 
