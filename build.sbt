@@ -1,3 +1,8 @@
+import NativePackagerHelper._
+import com.typesafe.sbt.packager.docker._
+
+enablePlugins(JavaAppPackaging, DockerPlugin, AshScriptPlugin)
+
 name := "rest-api-slurper"
 version := "1.0"
 scalaVersion := "2.13.1"
@@ -47,3 +52,11 @@ assemblyMergeStrategy in assembly := {
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
 }
+
+
+version in Docker := version.value
+
+dockerBaseImage := "openjdk:jre-alpine"
+
+dockerCommands += Cmd("USER","root")
+dockerCommands += Cmd("RUN","apk add --update libc6-compat")

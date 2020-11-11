@@ -38,9 +38,9 @@ object Apicall extends IOApp {
                     uri       <- buildUri
                     jsondata  <- client.expect[OverallData](uri)                    
                     csvdata   <- toCsvFormat(jsondata)
-                    // _         <- IO(println(csvdata))
+                    _         <- IO(println(csvdata))
                     // _         <- writeString(csvdata, "report-for-", "2020-11-06")
-                    _       <- writeToLocal(csvdata)
+                    // _       <- writeToLocal(csvdata)
             } yield ()
         }
 
